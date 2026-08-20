@@ -5,3 +5,5 @@ ALTER TABLE deals ADD COLUMN IF NOT EXISTS reassigned_at TIMESTAMPTZ;
 -- trailing note added during review
 
 -- trigger after Code Quality enablement
+
+-- retrigger after Code Quality + CodeRabbit
