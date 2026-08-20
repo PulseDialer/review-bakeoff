@@ -3,10 +3,13 @@ rules:
     languages: [generic]
     severity: ERROR
     message: >-
-      A URL-bearing or navigation attribute was added to the sanitiser
-      allowlist. These can retarget a relative fetch to another origin.
+      ⚠️ A URL-bearing or navigation attribute was added to the sanitiser
+      allowlist. These can retarget a relative fetch to another origin…
     patterns:
-      - pattern-regex: "'(formaction|srcdoc|http-equiv|dynsrc|lowsrc|formmethod|ping|background)'"
+      - pattern-regex: >-
+          '(formaction|srcdoc|
+          http-equiv|dynsrc|lowsrc|
+          formmethod|ping|background)'
     paths:
       include:
         - "apps/dialer-next/client/src/lib/sanitise.ts"

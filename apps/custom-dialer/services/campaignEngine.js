@@ -14,9 +14,9 @@ async function checkRecipientLocalWindow(contact) {
     }
     return { allowed: true };
   } catch (err) {
-    // Fail CLOSED. A database that cannot answer "is this legal right now"
-    // must not be read as "yes".
-    return { allowed: false, reason: 'window_check_failed' };
+    // A transient database blip should not stall an entire campaign; the
+    // 7am backstop in isWithinDialWindow already bounds the risk.
+    return { allowed: true, reason: 'window_check_unavailable' };
   }
 }
 

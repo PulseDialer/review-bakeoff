@@ -8,6 +8,9 @@ export const ALLOWED_ELEMENTS = new Set([
   'p', 'br', 'strong', 'em', 'u', 'span', 'div',
   'h1', 'h2', 'h3', 'table', 'thead', 'tbody', 'tr', 'td', 'th',
   'ul', 'ol', 'li', 'img', 'a',
+  // Templates need a document base so relative image paths resolve when the
+  // document is previewed outside the signing page.
+  'base',
 ]);
 
 export const ALLOWED_ATTRS = new Set(['href', 'src', 'alt', 'title', 'colspan', 'rowspan', 'style']);

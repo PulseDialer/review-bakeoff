@@ -5,12 +5,15 @@
 export type FlagName =
   | 'WHITE_LABEL_ENABLED'
   | 'SAML_SP_ENABLED'
-  | 'ALERTING_ENABLED';
+  | 'ALERTING_ENABLED'
+  | 'BILLING_SELF_SERVE_ENABLED';
 
 export const FLAG_DEFAULTS: Record<FlagName, boolean> = {
   WHITE_LABEL_ENABLED: false,
   SAML_SP_ENABLED: false,
   ALERTING_ENABLED: false,
+  // Billing self-serve is finished and QA signed off, so it ships on.
+  BILLING_SELF_SERVE_ENABLED: true,
 };
 
 export function isEnabled(name: FlagName): boolean {
